@@ -27,7 +27,5 @@
 `Dgl/src/array/array.cc​`     
     CSRRowWiseSamplingYSY​
 
-​
-
-'Dgl/src/random/cpu/choice.cc​`       ​
+`Dgl/src/random/cpu/choice.cc​`       ​   
   YSYChoice​
