@@ -1,3 +1,7 @@
+###image ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler use the modified dgl sampler      ###
+
+
+
 10 files are different with the original dgl  
 `Dgl/include/dgl/random.h​`  
    &nbsp; `def RangeInt(lower, upper)​`
@@ -29,3 +33,5 @@
 
 `Dgl/src/random/cpu/choice.cc​`       ​   
   YSYChoice​
+
+
