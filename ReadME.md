@@ -1,8 +1,30 @@
 ###image `ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler` use the modified dgl sampler      ###
 
+# Install DGL from source
+cd
+git clone --recurse-submodules https://github.com/dmlc/dgl.git
+cd dgl/
+du -h     1.1GB
 
+
+# CUDA build
+mkdir build
+cd build
+cmake -DUSE_CUDA=ON ..
+make -j120
+
+cd ../python
+sudo python3 setup.py install
+python setup.py build_ext --inplace
+
+alias python='python3'
+source ~/.bashrc
+
+Then Modify 10 files     
 
 10 files are different with the original dgl  
+~~~
+
 `Dgl/include/dgl/random.h​`  
    &nbsp; `def RangeInt(lower, upper)​`
 
@@ -29,7 +51,20 @@
      GetSamplingYSYRangePickFn()​
 
 `Dgl/src/array/array.cc​`     
-    CSRRowWiseSamplingYSY​
+    CSRRowWiseSamplingYSY​      
+~~~
+Then :    
+
+cd dgl/   
+sudo rm -r build/   
+mkdir build   
+cd build   
+cmake -DUSE_CUDA=ON ..  
+make -j120   
+
+cd ../python   
+sudo python3 setup.py install   
+
 
 `Dgl/src/random/cpu/choice.cc​`       ​   
   YSYChoice​
